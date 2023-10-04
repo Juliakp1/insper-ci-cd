@@ -26,7 +26,11 @@ jobs:
     - name: Login to Docker Hub
       uses: docker/login-action@v3
       with:
+<<<<<<< HEAD
         username: "Juliakp1"
+=======
+        username: "ezambomsantana"
+>>>>>>> cf88a3523ff4acffd9ac371982d6c05daf145bbf
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Set up Docker Buildx
@@ -38,7 +42,11 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
+<<<<<<< HEAD
         tags: Juliakp1/insper-ci-cd:${{ github.sha }}
+=======
+        tags: ezambomsantana/partida-06-ci:${{ github.sha }}
+>>>>>>> cf88a3523ff4acffd9ac371982d6c05daf145bbf
         
     - name: executing remote ssh commands using password
       uses: appleboy/ssh-action@master
@@ -50,5 +58,10 @@ jobs:
         script: |
           docker stop partida-aula
           docker rm --force partida-aula
+<<<<<<< HEAD
           docker run  -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} -d -p 8080:8080 --name partida-aula Juliakp1/insper-ci-cd:${{ github.sha }}
           
+=======
+          docker run  -e MONGO_PASSWORD=${{ secrets.MONGO_PASSWORD }} -d -p 8080:8080 --name partida-aula ezambomsantana/partida-06-ci:${{ github.sha }}
+          
+>>>>>>> cf88a3523ff4acffd9ac371982d6c05daf145bbf
