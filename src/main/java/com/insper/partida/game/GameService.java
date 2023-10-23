@@ -27,6 +27,11 @@ public class GameService {
     @Autowired
     private TeamService teamService;
 
+    public List<GameReturnDTO> listGames() {
+        List<Game> games =  gameRepository.findAll();
+        return games.stream().map(game -> GameReturnDTO.covert(game)).toList();
+    }
+
     public Page<GameReturnDTO> listGames(String home, String away, Integer attendance, Pageable pageable) {
         if (home != null && away != null) {
 
