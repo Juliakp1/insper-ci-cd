@@ -2,5 +2,4 @@
 
 Entrega 4 de Projeto de Software e Gestão Ágil
 
-![Coverage](.github/badges/jacoco.svg)
-![Coverage](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/Juliakp1/insper-ci-cd/edit/master/.github/badges/jacoco.json)
+[![Coverage](.github/badges/jacoco.svg)](https://github.com/Juliakp1/insper-ci-cd/actions/workflows/build.yml)
